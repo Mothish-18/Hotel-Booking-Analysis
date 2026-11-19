@@ -1,0 +1,426 @@
+# HOTEL BOOKING & CANCELLATION ANALYSIS
+### End-to-End Data Analytics Project Using Python, SQL and Power BI
+
+**Project Type:** Data Analytics  
+**Tools Used:** Python, Pandas, NumPy, Jupyter Notebook, MySQL Workbench, Power BI  
+**Domain:** Hospitality  
+**Author:** [Your Name]
+
+---
+
+# 1. PROJECT OVERVIEW
+
+The Hotel Booking & Cancellation Analysis project focuses on analysing hotel booking data to understand booking patterns, customer behaviour, cancellation trends and hotel pricing.
+
+The project uses data from two types of hotels: City Hotel and Resort Hotel.
+
+The analysis is performed using Python for data cleaning and preparation, SQL for querying and analysing data, and Power BI for creating an interactive dashboard.
+
+The main objective is to transform raw booking data into meaningful insights that can help hotels understand their booking performance and cancellation behaviour.
+
+# 2. BUSINESS PROBLEM
+
+Hotels receive bookings from different customers through various market segments and booking channels. However, cancellations can affect booking performance, room availability and business planning.
+
+Understanding booking trends and cancellation patterns is important for improving hotel operations and making better business decisions.
+
+This project aims to answer important business questions such as:
+
+- What is the total number of hotel bookings?
+- How many bookings were canceled?
+- What is the overall cancellation rate?
+- Which hotel type receives more bookings?
+- How do booking trends change over time?
+- Which lead-time groups have higher cancellation rates?
+- How do new and repeat guests behave?
+- Which countries contribute the most bookings?
+- How does the average daily rate change over time?
+- How do cancellation patterns differ across market segments?
+
+# 3. PROJECT OBJECTIVES
+
+The main objectives of this project are:
+
+1. Understand and analyse hotel booking data.
+2. Clean and prepare raw data using Python.
+3. Perform exploratory data analysis using SQL.
+4. Identify booking and cancellation patterns.
+5. Analyse customer behaviour and hotel performance.
+6. Create an interactive Power BI dashboard.
+7. Present meaningful business insights through data visualisation.
+
+# 4. DATASET DESCRIPTION
+
+The project uses the Hotel Booking Demand dataset.
+
+The dataset contains hotel booking records for:
+
+- City Hotel
+- Resort Hotel
+
+The original dataset contains approximately 119,390 records and 32 columns.
+
+Some important columns include:
+
+- hotel
+- is_canceled
+- lead_time
+- arrival_date_year
+- arrival_date_month
+- stays_in_weekend_nights
+- stays_in_week_nights
+- adults
+- children
+- country
+- market_segment
+- distribution_channel
+- adr
+- is_repeated_guest
+
+The dataset provides information about booking details, customer information, arrival dates, cancellations and hotel pricing.
+
+# 5. TOOLS AND TECHNOLOGIES
+
+### 5.1 Python
+
+Python was used for data cleaning, data manipulation and feature engineering.
+
+Libraries used:
+
+- Pandas
+- NumPy
+
+### 5.2 Jupyter Notebook
+
+Jupyter Notebook was used to write and execute Python code throughout the data preparation and analysis process.
+
+### 5.3 MySQL Workbench
+
+MySQL Workbench was used to create the database, import the cleaned dataset and execute SQL queries for business analysis.
+
+### 5.4 Power BI
+
+Power BI Desktop was used to create DAX measures, visualisations and an interactive three-page dashboard.
+
+# 6. DATA CLEANING AND PREPARATION USING PYTHON
+
+The original dataset was imported into Jupyter Notebook using Pandas.
+
+The following activities were performed:
+
+- Imported the dataset.
+- Inspected the dataset structure.
+- Checked the number of rows and columns.
+- Examined data types.
+- Checked missing values.
+- Checked duplicate records.
+- Handled missing values.
+- Created additional analytical columns.
+- Prepared the cleaned dataset for further analysis.
+
+### Feature Engineering
+
+The following new columns were created:
+
+**1. Arrival Date**
+
+Combined the arrival year, month and day information into a single date column.
+
+**2. Arrival Month**
+
+Created a month column to analyse monthly booking trends.
+
+**3. Arrival Year**
+
+Created a year column to compare booking performance across years.
+
+**4. Total Guests**
+
+Calculated the total number of guests using adults, children and babies.
+
+**5. Total Nights**
+
+Calculated the total length of stay using weekend nights and weekday nights.
+
+**6. Weekend Stay**
+
+Created a column to identify bookings that included weekend stays.
+
+**7. Family Booking**
+
+Created a column to identify bookings with children or babies.
+
+**8. Booking Status**
+
+Created a column to identify whether a booking was canceled or not canceled.
+
+**9. Lead Time Group**
+
+Grouped bookings according to their lead time to analyse cancellation behaviour.
+
+**10. Estimated Booking Value**
+
+Calculated estimated booking value using:
+
+Estimated Booking Value = ADR × Total Nights
+
+This is an estimated booking value and should not be treated as actual revenue collected.
+
+### Exporting the Cleaned Dataset
+
+After data cleaning and feature engineering, the cleaned dataset was exported as:
+
+hotel_bookings_cleaned.csv
+
+This file was used for SQL analysis and Power BI.
+
+# 7. SQL ANALYSIS USING MYSQL WORKBENCH
+
+After completing Python data preparation, the cleaned CSV file was imported into MySQL Workbench.
+
+A database was created:
+
+Database Name: hotel_booking_analysis
+
+SQL was used to analyse the dataset and answer business questions.
+
+The analysis covered:
+
+- Total bookings.
+- Canceled and non-canceled bookings.
+- Cancellation rate.
+- Bookings by hotel type.
+- Average daily rate.
+- Estimated booking value.
+- Guest behaviour.
+- Repeat guest bookings.
+- Monthly and yearly booking trends.
+- Country-wise bookings.
+- Lead-time analysis.
+- High-value bookings.
+
+SQL helped extract meaningful information from the cleaned dataset and supported the analysis performed in Power BI.
+
+# 8. POWER BI DASHBOARD DEVELOPMENT
+
+Power BI Desktop was used to create an interactive dashboard consisting of three analytical pages.
+
+DAX measures were created to calculate important business metrics.
+
+### Important DAX Measures
+
+- Total Bookings
+- Canceled Bookings
+- Not Canceled Bookings
+- Cancellation Rate
+- Average ADR
+- Average Stay
+- Estimated Booking Value
+- Total Guests
+- Repeat Guest Bookings
+- Repeat Guest Percentage
+
+## PAGE 1 – HOTEL BOOKING ANALYSIS
+
+This page provides an overall view of hotel booking performance.
+
+### KPI Cards
+
+1. Total Bookings
+2. Canceled Bookings
+3. Cancellation Rate
+4. Average ADR
+5. Average Stay
+6. Estimated Booking Value
+
+### Visualisations
+
+**1. Monthly Booking Trends**
+
+A line chart showing how hotel bookings change over time.
+
+**2. Bookings by Hotel Type**
+
+A bar chart comparing the number of bookings between City Hotel and Resort Hotel.
+
+**3. Booking Status**
+
+A donut chart showing the distribution of canceled and non-canceled bookings.
+
+### Purpose
+
+This page provides a general overview of booking performance and helps understand the overall booking situation.
+
+## PAGE 2 – CANCELLATION ANALYSIS
+
+This page focuses on understanding booking cancellations and the factors associated with them.
+
+### Visualisations
+
+**1. Cancellation Rate by Hotel Type**
+
+Compares cancellation rates between City Hotel and Resort Hotel.
+
+**2. Cancellation Rate by Lead Time**
+
+Shows how cancellation rates differ across lead-time groups.
+
+**3. New vs Repeat Guest Bookings**
+
+Compares booking distribution between new and repeat guests.
+
+**4. Top 10 Countries by Bookings**
+
+Identifies the countries contributing the highest number of bookings.
+
+**5. Cancellation Rate by Market Segment**
+
+Compares cancellation rates across different market segments.
+
+### Purpose
+
+This page helps identify cancellation patterns across hotel types, customer groups, lead times and market segments.
+
+## PAGE 3 – CANCELLATION TRENDS
+
+This page focuses on cancellation patterns over time.
+
+### Visualisations
+
+**1. Monthly Cancellations**
+
+A line chart showing the number of canceled bookings across months.
+
+**2. Monthly Cancellation Rate**
+
+Shows how the cancellation percentage changes over time.
+
+**3. Cancellation Rate by Arrival Year**
+
+Compares cancellation rates across different arrival years.
+
+### Purpose
+
+This page helps understand how cancellation activity changes over time and identifies important monthly and yearly patterns.
+
+# 9. KEY BUSINESS INSIGHTS
+
+This section should be completed after reviewing the actual results from Python, SQL and Power BI.
+
+The following areas were selected for business insight analysis:
+
+**1. Overall Booking Performance**
+
+Total number of bookings and the distribution of canceled and non-canceled bookings.
+
+**2. Hotel Type Performance**
+
+Comparison of City Hotel and Resort Hotel based on booking volume and cancellation rate.
+
+**3. Cancellation Behaviour**
+
+Identification of lead-time groups and market segments with higher cancellation rates.
+
+**4. Customer Behaviour**
+
+Comparison of new and repeat guest bookings.
+
+**5. Booking Trends**
+
+Identification of monthly and yearly booking patterns.
+
+**6. Country-wise Analysis**
+
+Identification of the countries contributing the highest number of bookings.
+
+**7. Pricing Analysis**
+
+Comparison of average daily rates and estimated booking values.
+
+### Actual Findings
+
+Overall Cancellation Rate: [Add your actual result]
+
+Hotel Type with Higher Cancellation Rate: [Add your finding]
+
+Lead-Time Group with Higher Cancellation Rate: [Add your finding]
+
+Highest Booking Month: [Add your finding]
+
+Top Booking Country: [Add your finding]
+
+Market Segment with Higher Cancellation Rate: [Add your finding]
+
+Do not enter assumed values. Use the actual results from your completed analysis.
+
+# 10. BUSINESS RECOMMENDATIONS
+
+Based on the final analytical findings, recommendations can be developed to help hotels improve booking performance.
+
+Possible areas for recommendations include:
+
+- Review cancellation policies if certain booking groups have consistently high cancellation rates.
+- Monitor booking channels and market segments with higher cancellation rates.
+- Use historical booking trends to support demand planning.
+- Develop strategies to encourage repeat guest bookings.
+- Monitor pricing patterns to support better room pricing decisions.
+- Use country-wise booking patterns to understand customer demand.
+
+Final recommendations should be based on the actual findings from the analysis.
+
+# 11. PROJECT LIMITATIONS
+
+- The analysis is based on the available historical dataset.
+- Estimated booking value is calculated using ADR multiplied by total nights and is not actual revenue collected.
+- The dataset is observational, so identified patterns do not automatically establish cause and effect.
+- Data cleaning and missing-value handling decisions may affect analytical results.
+- The analysis does not include additional external business information such as operating costs or hotel profits.
+
+# 12. PROJECT OUTCOME
+
+This project demonstrates an end-to-end data analytics workflow using Python, SQL and Power BI.
+
+Through this project, the raw hotel booking dataset was cleaned and prepared using Python, analysed using SQL and transformed into an interactive Power BI dashboard.
+
+The final dashboard presents booking performance, cancellation behaviour, customer patterns and pricing trends through three analytical pages.
+
+The project demonstrates practical skills in data cleaning, feature engineering, SQL querying, DAX calculations, data visualisation and business analysis.
+
+# 13. PROJECT FOLDER STRUCTURE
+
+Hotel_Booking_Analysis/
+
+Dataset/
+- hotel_bookings.csv
+- hotel_bookings_cleaned.csv
+
+Python_Analysis/
+- Hotel_Booking_Analysis.ipynb
+
+SQL_Analysis/
+- Hotel_Booking_SQL_Queries.sql
+
+PowerBI_Dashboard/
+- Hotel_Booking_Cancellation_Analysis.pbix
+- Hotel_Booking_Dashboard.pdf
+
+Documentation/
+- Project_Documentation.docx
+
+README.md
+
+# 14. CONCLUSION
+
+The Hotel Booking & Cancellation Analysis project provided an opportunity to work with real-world structured data and apply important data analytics techniques.
+
+By combining Python, SQL and Power BI, the project transformed raw booking records into useful analytical information.
+
+The three-page dashboard provides an overview of hotel booking performance, cancellation behaviour and cancellation trends.
+
+This project represents a practical application of data analytics skills and demonstrates the complete process from raw data preparation to dashboard development and business insight generation.
+
+---
+
+**Project Completed By:** [Mothish Kumar J]
+
+**Technologies:** Python | Pandas | NumPy | SQL | MySQL Workbench | Power BI
